@@ -1,0 +1,48 @@
+body{
+    text-align: center;
+}
+#container{
+  width: 1000px;
+  height: 680px;
+  margin: 0 auto;
+  background-color: black;
+  border-radius: 20px;
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+}
+.header-score{
+  color: green;
+  font-size: 35px;
+  font-style: courier;
+  text-align: left;
+  padding-left: 10px;
+}
+.header-lives{
+  color: red;
+  font-size: 35px;
+  font-style: couier;
+  text-align: left;
+  padding-left: 10px;
+}
+.homePage{
+  color: green;
+  font-size: 50px;
+  font-family: 'Righteous';
+  margin-bottom: 35px;
+}
+#lane{
+  margin: 0px 0px 70px 0px;
+}
+#the-frog{
+  position: absolute;
+  top: 600px;
+  left: 500px;
+
+}
+
+footer{
+  width: 600px;
+  background-color: red;
+}
