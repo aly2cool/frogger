@@ -1,0 +1,23 @@
+
+#gameCanvas {
+  background-color: black;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+#score{
+  color: red;
+  font-family: courier;
+  font-size: 30px;
+  left:350px;
+  top: 10px;
+  position: absolute;
+}
+#lives{
+  color:red;
+  font-size: 30px;
+  font-family: courier;
+  left: 350px;
+  top: 45px;
+  position: absolute;
+}
