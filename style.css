@@ -37,9 +37,12 @@ body{
 }
 #the-frog{
   position: absolute;
-  top: 600px;
-  left: 500px;
-
+}
+.carLeft{
+  position: absolute;
+}
+.carRight{
+  position: absolute;
 }
 
 footer{
