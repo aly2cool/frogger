@@ -18,7 +18,7 @@ theRightCar[1].style.left = "-30px", theRightCar[1].style.top = "140px"
   function moveFrog(e){
     if (e.keyCode == '38') {
         let computedTop = parseInt(getComputedStyle(theFrog).getPropertyValue('top'))
-        theFrog.style.top = parseInt(computedLeft - 25) + 'px'
+        theFrog.style.top = parseInt(computedTop - 25) + 'px'
         console.log('up key was pressed')
 
     }
@@ -27,9 +27,9 @@ theRightCar[1].style.left = "-30px", theRightCar[1].style.top = "140px"
      if (e.keyCode == '40') {
         // down arrow
         let computedTop = parseInt(getComputedStyle(theFrog).getPropertyValue('top'))
-        theFrog.style.top = parseInt(computedLeft + 25) + 'px'
+        theFrog.style.top = parseInt(computedTop + 25) + 'px'
         console.log('down key was pressed')
-        console.log(computedLeft)
+        console.log(computedTop)
     }
 
      if (e.keyCode == '37') {
@@ -45,18 +45,31 @@ theRightCar[1].style.left = "-30px", theRightCar[1].style.top = "140px"
        let computedLeft = parseInt(getComputedStyle(theFrog).getPropertyValue('left'))
        theFrog.style.left = parseInt(computedLeft + 25) + 'px'
        console.log('right arrow pressed')
-       moveCars() // test cars moving
      }
 
   }
 
 function moveCars(){
     let computedLeft = parseInt(getComputedStyle(theRightCar[0]).getPropertyValue('left'))
-    theRightCar[0].style.left = parseInt(computedLeft + 50) + 'px'
-    theRightCar[1].style.left = parseInt(computedLeft + 30) + 'px'
-    theLeftCar[0].style.left = parseInt(computedLeft - 50) + 'px'
-    theLeftCar[1].style.left = parseInt(computedLeft - 30) + 'px'
+    let computedLeft1 = parseInt(getComputedStyle(theRightCar[1]).getPropertyValue('left'))
+    let computedLeft2 = parseInt(getComputedStyle(theLeftCar[0]).getPropertyValue('left'))
+    let computedLeft3 = parseInt(getComputedStyle(theLeftCar[1]).getPropertyValue('left'))
 
-  }
+
+    theRightCar[0].style.left = parseInt(computedLeft + 70) + 'px'
+    if(parseInt(theRightCar[0].style.left) > 1000) {theRightCar[0].style.left = '-70px'}
+
+    theRightCar[1].style.left = parseInt(computedLeft1 + 45) + 'px'
+    if(parseInt(theRightCar[1].style.left) > 1000) {theRightCar[1].style.left = '-70px'}
+
+    theLeftCar[0].style.left = parseInt(computedLeft2 - 60) + 'px'
+    if(parseInt(theLeftCar[0].style.left) < -40) {theLeftCar[0].style.left = '1000px'}
+
+    theLeftCar[1].style.left = parseInt(computedLeft3 - 70) + 'px'
+    if(parseInt(theLeftCar[1].style.left) < -40) {theLeftCar[1].style.left = '1000px'}
+
+    }
+
 
 window.addEventListener('keydown', moveFrog, false)
+setInterval(moveCars, 200)
