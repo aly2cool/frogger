@@ -26,11 +26,12 @@ body{
   text-align: left;
   padding-left: 10px;
 }
-.homePage{
+.logo{
   color: green;
   font-size: 50px;
   font-family: 'Righteous';
-  margin-bottom: 35px;
+  top: -80px;
+  position: relative;
 }
 #lane{
   margin: 0px 0px 70px 0px;
@@ -40,12 +41,20 @@ body{
 }
 .carLeft{
   position: absolute;
+  /* background: blue; */
 }
 .carRight{
   position: absolute;
+  /* background: blue; */
 }
 
 footer{
   width: 600px;
   background-color: red;
+}
+.lilypad{
+  padding: 20px 50px 0px 20px;
+  top: -50px;
+  left: 10px;
+  position: relative;
 }
