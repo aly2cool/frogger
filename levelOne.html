@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Frogger</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+    <link rel=stylesheet href=style.css type='text/css'>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="easytimer.js"></script>
+
+  </head>
+<body>
+  <div id='container'>
+
+
+    <header>
+        <div class='header-score'><strong>Lilys: 0</strong> </div>
+        <div class='header-lives'><strong>Lives: 3</strong></div>
+        <div id="timer">00:00:00</div>
+        <div class='logo'>Frogger</div>
+
+      </header>
+      <div id='main'>
+        <img src='images/lilypad.png' class='lilypad' width='15%' height='50'>
+        <img src='images/lilypad.png' class='lilypad' width='15%' height='50'>
+        <img src='images/lilypad.png' class='lilypad' width='15%' height='50'>
+        <img src='images/lilypad.png' class='lilypad' width='15%' height='50'>
+        <img src='images/lilypad.png' class='lilypad' width='15%' height='50'>
+        <img src='images/highway.png' id='lane' width='1000' height='150'>
+        <img src='images/highway2.png' id='lane2' width='1000' height='150'>
+        <img src='images/car.png' class='carLeft' width='80' height='50'>
+        <img src='images/car.png' class='carLeft' width='80' height='50'>
+        <img src='images/car2.png' class='carRight' width='80' height='50'>
+        <img src='images/car2.png' class='carRight' width='80' height='50'>
+        <img src='images/frog.png' id='the-frog' width='50' height='50'>
+
+  </div>
+</div>
+
+<script src=levelOne.js charset='utf-8'></script>
+</body>
+</html>

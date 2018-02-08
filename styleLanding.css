@@ -1,0 +1,43 @@
+.container{
+  position: relative;
+}
+body{
+  background-color: black;
+}
+h2{
+  color: #870309;
+
+}
+#logo{
+  top: 350px;
+  position: absolute;
+}
+#firstGame{
+  top: 70%;
+  left: 40%;
+  font-size: 40px;
+  opacity: 0.8;
+  position: absolute;
+}
+#secondGame{
+  top: 80%;
+  left: 40%;
+  color: black;
+  font-family: cursive;
+  font-weight: bold;
+  font-size: 50px;
+  opacity: 0.8;
+  position: absolute;
+}
+#secondLogo{
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 30%;
+}
+#speedFrog{
+  opacity: 0.9;
+}
+#lilyFrog{
+  opacity: 0.9;
+}

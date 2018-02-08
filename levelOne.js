@@ -18,13 +18,18 @@ let score = 0;
 let lives = 3;
 let headerLives = document.getElementsByClassName('header-lives')
 let levelButton = document.getElementById('levelTwo')
+//let timer = document.getElementsByClassName('timer')
+let timer = new Timer();
+timer.start();
+timer.addEventListener('secondsUpdated', function (e) {
+    $('#timer').html(timer.getTimeValues().toString());
+});
 
   function moveFrog(e){
     if (e.keyCode == '38') {
         //up arrow
         let computedTop = parseInt(getComputedStyle(theFrog).getPropertyValue('top'))
         theFrog.style.top = parseInt(computedTop - 25) + 'px'
-
           //prevent frog from leaving the canvas
           if(parseInt(theFrog.style.top) < 0){
             theFrog.style.top = parseInt(computedTop + 25) + 'px'
@@ -41,6 +46,7 @@ let levelButton = document.getElementById('levelTwo')
         //prevent frog from going underground
         if(parseInt(theFrog.style.top) > 630){
           theFrog.style.top = parseInt(computedTop - 25) + 'px'
+          timer.start()
         }
       }
 
@@ -71,6 +77,9 @@ let levelButton = document.getElementById('levelTwo')
      checkLily(theFrog, lilypad[0])
      checkLily(theFrog, lilypad[1])
      checkLily(theFrog, lilypad[2])
+     checkLily(theFrog, lilypad[3])
+     checkLily(theFrog, lilypad[4])
+
 
      if(checkLily(theFrog, lilypad[0]) == lilypad[0]){
        positionFrogOnLily(theFrog, lilypad[0])
@@ -82,6 +91,12 @@ let levelButton = document.getElementById('levelTwo')
 
      if(checkLily(theFrog, lilypad[2]) == lilypad[2]){
        positionFrogOnLily(theFrog, lilypad[2])
+     }
+     if(checkLily(theFrog, lilypad[3]) == lilypad[3]){
+       positionFrogOnLily(theFrog, lilypad[3])
+     }
+     if(checkLily(theFrog, lilypad[4]) == lilypad[4]){
+       positionFrogOnLily(theFrog, lilypad[4])
      }
 
 }
@@ -131,10 +146,13 @@ function gameOver(){
   lilypad[0].style.display = 'none'
   lilypad[1].style.display = 'none'
   lilypad[2].style.display = 'none'
+  lilypad[3].style.display = 'none'
+  lilypad[4].style.display = 'none'
   theLeftCar[0].style.display = 'none'
   theLeftCar[1].style.display = 'none'
   theRightCar[0].style.display = 'none'
   theRightCar[1].style.display = 'none'
+  theFrog.src = 'images/frog.png'
   theFrog.style.height = '700px'
   theFrog.style.width = '700px'
   theFrog.style.left = '150px'
@@ -142,7 +160,10 @@ function gameOver(){
   setTimeout(function (){
     theFrog.src = 'images/sadFrogStanding.png'
   }, 3000)
-
+  console.log(timer.getTimeValues().toString())
+  timer.stop()
+  //console.log(timer.getPropertyValue())
+  //console.log(timer.getTimeValues().minutes + ':' + timer.getTimeValues().seconds + ':' + timer.getTimeValues().secondTenths)
 }
 
 
@@ -156,7 +177,7 @@ function positionFrogOnLily(weMadeIt, whichLily){
   headerScore[0].innerHTML = 'Lilys: ' + score
   theFrog.style.left = "500px"
   theFrog.style.top = "600px"
-  if(score == 3){
+  if(score == 5){
     whichLily.style.visibility = 'hidden'
     theLeftCar[0].style.display = 'none'
     theLeftCar[1].style.display = 'none'

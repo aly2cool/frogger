@@ -58,3 +58,8 @@ footer{
   left: 10px;
   position: relative;
 }
+#timer{
+  position: absolute;
+  font-size: 30px;
+  padding-left: 10px;
+}
